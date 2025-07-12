@@ -36,5 +36,3 @@ with col2:
 with col3:
     st.header("An owl")
     st.image("https://static.streamlit.io/examples/owl.jpg")
-
-st.video(video_bytes)
