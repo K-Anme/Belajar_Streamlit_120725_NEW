@@ -23,30 +23,19 @@ video_file = open("myvideo.mp4", "rb")
 video_bytes = video_file.read()
 import streamlit as st
 
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    st.header("A cat")
-    st.image("https://static.streamlit.io/examples/cat.jpg")
-
-with col2:
-    st.header("A dog")
-    st.image("https://static.streamlit.io/examples/dog.jpg")
-
-with col3:
-    st.header("An owl")
-    st.image("https://static.streamlit.io/examples/owl.jpg")
 import streamlit as st
+import pandas as pd
+import numpy as np
 
-tab1, tab2, tab3 = st.tabs(["Cat", "Dog", "Owl"])
+chart_data = pd.DataFrame(
+    {
+        "col1": np.random.randn(20),
+        "col2": np.random.randn(20),
+        "col3": np.random.choice(["A", "B", "C"], 20),
+    }
+)
 
-with tab1:
-    st.header("A cat")
-    st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
-with tab2:
-    st.header("A dog")
-    st.image("https://static.streamlit.io/examples/dog.jpg", width=200)
-with tab3:
-    st.header("An owl")
-    st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
+st.line_chart(chart_data, x="col1", y="col2", color="col3")
+Copy
+
 
