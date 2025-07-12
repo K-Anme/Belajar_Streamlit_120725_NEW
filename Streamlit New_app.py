@@ -14,3 +14,12 @@ else:
 
 if st.button("Aloha", type="tertiary"):
     st.write("Ciao")
+import streamlit as st
+st.image("sunrise.jpg", caption="Sunrise by the mountains")
+Copy
+import streamlit as st
+
+video_file = open("myvideo.mp4", "rb")
+video_bytes = video_file.read()
+
+st.video(video_bytes)
